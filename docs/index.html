@@ -55,9 +55,6 @@
 							* Algorithmen generierte Kunst
 							* Der Weg ist das Ziel				<!-- .element: class="fragment" -->
 							* Algorithmen						<!-- .element: class="fragment" -->
-							* Was wird benötigt?				<!-- .element: class="fragment" -->
-							* Wo wird es meistens benutzt?		<!-- .element: class="fragment" -->
-							* Quellen							<!-- .element: class="fragment" -->
 						</textarea>
 					</section>
 				</section>
@@ -89,9 +86,8 @@
 							* Computer
 							* Texteditior / IDE					<!-- .element: class="fragment" -->
 							* Interpreter / Compiler			<!-- .element: class="fragment" -->
-							* Was wird benötigt?				<!-- .element: class="fragment" -->
-							* Wo wird es meistens benutzt?		<!-- .element: class="fragment" -->
-							* Quellen							<!-- .element: class="fragment" -->
+							  * Processing						<!-- .element: class="fragment" -->
+							* Idee								<!-- .element: class="fragment" -->
 						</textarea>
 					</section>
 				</section>
@@ -103,12 +99,10 @@
 					<!--10Print-->
 					<section data-markdown>
 						<textarea data-template>
-							* Allgemeines						<!-- .element: class="fragment" -->
-							* Entstehung						<!-- .element: class="fragment" -->
-							* Algorithmen						<!-- .element: class="fragment" -->
-							* Was wird benötigt?				<!-- .element: class="fragment" -->
-							* Wo wird es meistens benutzt?		<!-- .element: class="fragment" -->
-							* Quellen							<!-- .element: class="fragment" -->
+							* Comodore 64
+							* BASIC								<!-- .element: class="fragment" -->
+							* Zufall							<!-- .element: class="fragment" -->
+							* ```10 PRINT CHR$(205.5 + RND(1)); : GOTO 10```	<!-- .element: class="fragment" -->
 						</textarea>
 					</section>
 
@@ -188,7 +182,8 @@
 
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' }
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
 		</script>
