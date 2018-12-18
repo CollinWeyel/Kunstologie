@@ -69,14 +69,27 @@
 	
 					<section data-markdown>
 						<textarea data-template>
-							* Plotter								<!-- .element: class="fragment" -->
-							* 1965<!-- .element: class="fragment" -->
-							* New York								<!-- .element: class="fragment" -->
-							* 1968 London							<!-- .element: class="fragment" -->
+							* Plotter								<!-- .element: class="fragment" data-fragment-index="1"-->
+							* 1965<!-- .element: class="fragment" data-fragment-index="2"-->
+							* New York								<!-- .element: class="fragment" data-fragment-index="3"-->
+							* 1968 London							<!-- .element: class="fragment" data-fragment-index="4"-->
+							![https://66.media.tumblr.com/tumblr_lntzhpoNQs1qmskiio1_500.jpg](media/ica1968.jpg)<!-- .element: class="fragment fade-in-then-out float" data-fragment-index="4"-->
 							* Frevel								<!-- .element: class="fragment" -->
 							* Neues Zeitalter schon vor 50 Jahren	<!-- .element: class="fragment" -->
 							* Wachsendes Interesse					<!-- .element: class="fragment" -->
 							* Ähnlich wie Musik						<!-- .element: class="fragment" -->
+						</textarea>
+					</section>
+				</section>
+
+				<!--Beispiele-->
+				<section>
+					<h2>Beispiele</h2>
+	
+					<section data-markdown>
+						<textarea data-template>
+							* [thedotisblack](http://thedotisblack.com)<!-- .element: class="fragment fade-out float" -->
+							![https://i.pinimg.com/474x/4a/bc/14/4abc140d84561c46abedd16f3490d495--generative-art-online-art.jpg](media/pin1.jpg)<!-- .element: class="fragment fade-in-then-out" -->
 						</textarea>
 					</section>
 				</section>
@@ -142,6 +155,7 @@
 
 							* Chaosgame
 							* Netzkäfer							<!-- .element: class="fragment" -->
+							* Spiral out						<!-- .element: class="fragment" -->
 							* Geh ins Licht						<!-- .element: class="fragment" -->
 						</textarea>
 					</section>
@@ -153,9 +167,11 @@
 
 					<section data-markdown>
 						<textarea data-template>
-							* [annettedoms.net](http://www.annettedoms.net/2016/12/kunst-kultur-2-0/)
-							* [wikipedia.org](https://de.wikipedia.org/wiki/Digitale_Kunst)
-							* [compusitionen.de](https://www.compusitionen.de/computerkunst/)
+							* [annettedoms](http://www.annettedoms.net/2016/12/kunst-kultur-2-0/)
+							* [wikipedia](https://de.wikipedia.org/wiki/Digitale_Kunst)
+							* [compusitionen](https://www.compusitionen.de/computerkunst/)
+							* [tumblr](https://66.media.tumblr.com/tumblr_lntzhpoNQs1qmskiio1_500.jpg)
+							* [pintrest](https://i.pinimg.com/474x/4a/bc/14/4abc140d84561c46abedd16f3490d495--generative-art-online-art.jpg)
 						</textarea>
 					</section>
 				</section>
@@ -166,9 +182,16 @@
 		<script src="js/reveal.js"></script>
 
 		<script>
+			var links = document.links;
+
+			for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+				if (links[i].hostname != window.location.hostname) {
+					links[i].target = '_blank';
+				} 
+			}
+
 			Reveal.initialize({
 				controls: false,
-				progress: false,
 
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
