@@ -14,29 +14,35 @@ public class TenPrint extends Sketch {
     public void setup() {
         g.setFill(bgColor);
         g.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
+        g.setLineWidth(2);
         posX = posY = 0;
-        lineColor = new Color(Math.random(), Math.random(), Math.random(), 1);
+        changeLineColor();
     }
 
     @Override
     public void loop() {
-        g.setFill(bgColor);
-        g.fillRect(posX, posY, sizeX, sizeY);
+            g.setFill(bgColor);
+            g.fillRect(posX, posY, sizeX + 1, sizeY + 1);
 
-        g.setStroke(lineColor);
-        if (random.nextBoolean()){
-            g.strokeLine(posX, posY, posX + sizeX, posY + sizeY);
-        }else{
-            g.strokeLine(posX + sizeX, posY, posX, posY + sizeY);
-        }
-
-        posX += sizeX;
-        if (posX > canvas.getWidth()){
-            posX = 0;
-            posY += sizeY;
-            if (posY > canvas.getHeight()){
-                posY = 0;
+            g.setStroke(lineColor);
+            if (random.nextBoolean()) {
+                g.strokeLine(posX, posY, posX + sizeX, posY + sizeY);
+            } else {
+                g.strokeLine(posX + sizeX, posY, posX, posY + sizeY);
             }
-        }
+
+            posX += sizeX;
+            if (posX > canvas.getWidth()) {
+                posX = 0;
+                posY += sizeY;
+                if (posY > canvas.getHeight()) {
+                    posY = 0;
+                    changeLineColor();
+                }
+            }
+    }
+
+    public void changeLineColor(){
+        lineColor = new Color(Math.random(), Math.random(), Math.random(), 1);
     }
 }

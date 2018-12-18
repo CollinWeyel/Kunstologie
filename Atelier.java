@@ -26,6 +26,11 @@ public class Atelier extends Application {
 
         modules = new ArrayList<>();
         modules.add(new TenPrint());
+        modules.add(new ChaosGame());
+        modules.add(new Netzkaefer());
+        modules.add(new SpiralOut());
+        modules.add(new Hullibu());
+        modules.add(new GehZumLicht());
 
         update = new AnimationTimer() {
             @Override
@@ -55,7 +60,6 @@ public class Atelier extends Application {
             switch(e.getCode()) {
                 case F5:
                     modules.get(index).setup();
-                    update.start();
                     break;
                 case F11:
                     stage.setFullScreen(!stage.isFullScreen());
@@ -78,18 +82,14 @@ public class Atelier extends Application {
                     index = (index + 1) % modules.size();
                     modules.get(index).setup();
                     break;
-                case LEFT:
-                    index = Math.abs(index - 1) % modules.size();
-                    modules.get(index).setup();
-                    break;
             }
         });
 
         stage.setFullScreenExitHint("");
 
         stage.setScene(scene);
-//        stage.getIcons().add(new Image("Schwender.png"));
-        stage.setTitle("Atelier");
+        stage.getIcons().add(new Image("Schwender.png"));
+        stage.setTitle("Kunstologie");
         stage.show();
 
         modules.get(index).setup();
